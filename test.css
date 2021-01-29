@@ -1,0 +1,123 @@
+
+/* flexbox elements */
+
+.wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: stretch;
+	padding: 5px;
+	background-image: url("dot-grid.png");
+	background-repeat: repeat;
+}
+
+.navbar {
+	display: flex;
+	font-size: 28px;
+	font-family: Arial;
+}
+
+.navlink {
+	display: block;
+	margin: 5px;
+	position: relative;
+}
+
+.header {
+	display: flex;
+}
+
+.wrapper > footer {
+	margin: 10px;
+
+	
+}
+
+.wrapper > content {
+	margin: 10px;
+
+}
+.wrapper > sidebar {
+	margin: 10px;
+}
+
+#content {
+	border: 2px dashed grey;
+    border-radius: 15px 0px 0px 15px;
+    background: #f2f2f4;
+	padding: 35px;
+	font-size: 16px;
+	font-family: Arial;
+}
+
+#sidebar {
+    border-radius: 0px 15px 15px 0px;
+    background: #e3e3e5;
+	padding: 35px;
+	color: #70707a;
+	font-family: Arial;
+}
+
+#footer {
+	padding: 20px;
+	color: gray;
+}
+
+@font-face {
+	font-family: "Mona";
+	src: url("mona.woff");
+}
+
+#monar {
+	font-family: "Mona";
+}
+
+.navbar a {
+    text-align: center;
+	padding: 15px 15px;
+}
+
+
+/* simple styling */
+h1 {
+    color: #f77254;
+}
+
+h2 {
+	color: #70707a;
+}
+h3 {
+    color: #70707a;
+}
+h5 {
+	color: #70707a;
+}
+p {
+	max-width: 600px;
+	text-align: justify;
+}
+
+a:link {
+    color: #f79554;
+    text-decoration: none;
+	font-weight: bold;
+}
+
+
+a:visited {
+    color: #f79554;
+    text-decoration: none;
+	font-weight: bold;
+}
+
+
+a:hover {
+    color: #5941a9;
+    text-decoration: none;
+}
+
+
+a:active {
+    color: #6d72c3;
+    text-decoration: none;
+} 
