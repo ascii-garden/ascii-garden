@@ -42,7 +42,6 @@
 }
 
 #content {
-	border: 2px dashed grey;
     border-radius: 15px 0px 0px 15px;
     background: #f2f2f4;
 	padding: 35px;
@@ -51,6 +50,7 @@
 }
 
 #sidebar {
+	border-left: 2px dashed grey;
     border-radius: 0px 15px 15px 0px;
     background: #e3e3e5;
 	padding: 35px;
