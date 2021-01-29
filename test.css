@@ -97,6 +97,10 @@ p {
 	text-align: justify;
 }
 
+ol {
+	text-align: left;
+}
+
 a:link {
     color: #f79554;
     text-decoration: none;

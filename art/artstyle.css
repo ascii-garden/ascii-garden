@@ -66,6 +66,7 @@
 	padding: 35px;
 	color: #70707a;
 	font-family: Arial;
+	max-width: 130px;
 }
 
 #footer {
@@ -87,6 +88,9 @@
 	padding: 15px 15px;
 }
 
+ol {
+	text-align: left;
+}
 
 /* simple styling */
 h1 {
