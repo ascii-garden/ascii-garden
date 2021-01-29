@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>the homepage of monar</title>
+    <link href="../../tech/techstyle.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+	<div class = "wrapper">	
+		<div class = "header">
+			<img src="../../tech/logo.png">
+		</div>
+	</div>
+	<div class = "wrapper">	
+		<div class="navbar">
+			<a href="../../index.html">home</a>
+			<a href="../../about/about.html">about</a>
+			<a href="../../tech.html">tech</a>
+			<a href="../../art/art.html">art</a>
+			<a href="../../blog/blog.html">blog</a>
+		</div>
+	</div>
+	<div class = "wrapper">		
+		<div id="content">
+			<center>
+				<h1>the amateur mode sweeping the nation</h1>
+				<img src="rfpic/ft/ft9_drawing.png" style="height: 300px;">
+				<p>FT8 is an extremely popular weak-signal mode used by amateur radio operators. It was developed at Princeton university by K1JT and K9AN, being launched first in 2017. It's popularity has exploded because it is so effective at what it does- propagation is currently at an extreme low, and talking to people from far away can be difficult as a result. Because FT8, and it's associated mode in the WSJT-X library, are so effective at encoding information into a package decodable at -21dB, it can be used in practically any conditions and has the capacity to reach extremely long distances. You can exchange information with people all over the world independent of space weather!</p>
+				<img src="rfpic/ft/ft8.PNG"> <img src="rfpic/ft/ft8_strong.PNG">
+				<h5>FT8 transmissions on the waterfall, including an especially strong transmission from ~50 miles away</h5>
+				<p>However, all of this comes at a cost. There is very little "touch" to using FT8- you just click a button to transmit and listen to decode- and only five pieces of information are exchanged during the conversation. Your callsign, your gridsquare, your signal report, a confirmation, and a goodbye. (Also, as an aside- FT8 is a very pretty digital mode!)</p>
+				<img src="rfpic/ft/ft8_wsjt.PNG" style="height: 100px;">
+				<h5>An image from within FT8's WSJT-X,<br> demonstrating the blocks of information transmitted during individual timeframes. <br>There are many conversations taking place on the same frequency.</h5>
+				<h2>technical details</h2>
+				<p>FT8 transmits 77 bits of information per message, with three bits representing the message type and the rest being dedicated to the message data. The mode requires an accurate clock to function, with each transmission being a precise 15 seconds- with so little data being encoded for the sake of readability, error checking is present, but the timing has to be succinct. The mode's developers have published a <a href="https://www.physics.princeton.edu/pulsar/k1jt/FT4_FT8_QEX.pdf">paper</a> describing the physics behind the mode, but be aware that it expects a lot from the reader.</p>
+				<h2>things I've heard</h2>
+				<p>Because FT8 is so minimal in the information exchanged, I think the most interesting information to share would be the locations of the stations I've recieved. </p>
+				<p>
+					<h4>Canada</h4>
+					Ontario<br>
+					Quebec<br>
+					<h4>United States</h4>
+					Colorado<br>
+Connecticut<br>
+Florida<br>
+Illinois<br>
+New York<br>
+Oregon<br>
+Pennsylvania<br>
+Tennessee<br>
+Virginia<br>
+<h4>Puerto Rico</h4>
+				</p>
+			</center>
+		</div>
+			<div id="sidebar">
+				<h3>sigid</h3><br>
+				<h3><a href="../../tech/sigid.html">go back</a></h3>
+			</div>	
+	</div>
+	<div class = "wrapper">	
+		<div id = "footer">
+			<img src="../../universal/seti.gif">
+			<img src="../../universal/linux_powered.gif">
+		</div>
+	</div>
+  </body>
+</html>
