@@ -24,6 +24,21 @@ font-family: "Courier New", Courier, monospace;
 
 }
 
+h1 {
+	font-size: 32px;
+}
+
+.box{
+	padding-bottom:3px;
+}
+
+.up{
+	float: right;
+}
+.up2{
+	float: right;
+}
+
 a {
 	color: #c05858;
 }
