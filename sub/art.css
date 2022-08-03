@@ -166,8 +166,19 @@ figcaption {
 
 figure {
     margin-left: 1em;
-    align-items: center;    
 }
+
+.imgwrap {
+    margin: auto;
+ }
+
+ .imgwrap figure {
+    display: block;
+    width: 100%;
+    max-width: 500px; /*actual image width*/
+    height: auto; /* maintain aspect ratio*/
+    margin: auto; /*optional centering of image*/
+ }
 
 
 .bgbox {
@@ -225,7 +236,7 @@ h4 {
     font-family: mononoki;
     font-weight: normal;
     margin: 1em;
-    margin-bottom: 1em;
+    margin-bottom: .5em;
     color:#686b6b;
 }
 
@@ -238,7 +249,8 @@ hr {
 }
 
 p {
-    margin: .5em;
+    margin-left: 1.2em;
+    margin-top: .5em;
 }
 
 
