@@ -55,7 +55,7 @@ body {
 
 .internal-call-box {
     background-color: rgb(81, 189, 240);
-    color: aliceblue;
+    color: aliceblue !important;
     height: 100%;
     padding: 1rem;
     margin: 0;
@@ -63,12 +63,51 @@ body {
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
-    display: flex;
-    align-items: left;
-    justify-content: left;
-    flex-direction: column;
     border-radius: .5rem;
-    
+    align-items: center;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: .2em;
+    margin-bottom: 3px;
+}
+.internal-call-box-2 {
+    background-color: RGB(240, 132, 81);
+    color: aliceblue !important;
+    height: 100%;
+    padding: 1rem;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    border-radius: .5rem;
+    align-items: center;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: .2em;
+    margin-bottom: 3px;  
+}
+.internal-call-box-3 {
+    background-color: #b651f0;
+    color: aliceblue !important;
+    height: 100%;
+    padding: 1rem;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    border-radius: .5rem;
+    align-items: center;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: .2em;
+    margin-bottom: 3px;  
+}
+
+svg {
+    padding-right: 1rem;
+    width: 10%; height: auto;
 }
 
 .mainbox {
