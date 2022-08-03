@@ -23,6 +23,22 @@ body {
     flex-flow: column;
 }    
 
+.intro-box {
+    height: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
+}
+
 .internal-box {
     height: 100%;
     padding: 1rem;
@@ -37,6 +53,24 @@ body {
     flex-direction: column;
 }
 
+.internal-call-box {
+    background-color: rgb(81, 189, 240);
+    color: aliceblue;
+    height: 100%;
+    padding: 1rem;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
+    border-radius: .5rem;
+    
+}
+
 .mainbox {
     background: rgba(255, 255, 255);
     border-radius: .5rem;
@@ -49,9 +83,14 @@ body {
     max-width: 45rem;
     font-family: mononoki;
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
     box-shadow: 0 -10px 9px -5px #1fa8ca;
-  }
+}
+
+.subbox {
+    display: flex;
+    flex-flow: row;
+}    
   
 @keyframes bgscroll {
     0% {background-position: 3rem 7rem;}
@@ -90,9 +129,10 @@ h1 {
 }
 
 h2 {
-    font-family: title;
-    font-size: 1.5rem;
-    color:rgb(101, 200, 247);
+    font-family: mononoki;
+    font-size: 1.1rem;
+    color:rgb(198, 203, 206);
+    
     margin: 0;
 }
 
@@ -102,6 +142,15 @@ h4 {
     font-family: mononoki;
     font-weight: normal;
     margin: 0;
+    color:#2b2c2c;
+}
+
+hr {
+    width:45%;
+    text-align:left;
+    margin-left:0;
+    color: rgb(81, 189, 240);
+    border-width: 3px;
 }
 
 
