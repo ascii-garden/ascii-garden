@@ -1,12 +1,11 @@
 body {
     background: rgb(239, 241, 241);
-    height: 100%;
+    min-height: 100%;
     padding: 0;
     margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .flexbox-container{
@@ -27,7 +26,7 @@ body {
     height: 100%;
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0;
     margin: 0;
     display: -webkit-box;
     display: -moz-box;
@@ -42,6 +41,7 @@ body {
 .internal-box {
     height: 100%;
     padding: 1rem;
+    padding-top: 0em;
     margin: 0;
     display: -webkit-box;
     display: -moz-box;
@@ -54,7 +54,7 @@ body {
 }
 
 .internal-call-box {
-    background-color: rgb(81, 189, 240);
+    background-color: #b651f0;
     color: aliceblue !important;
     height: 100%;
     padding: 1rem;
@@ -71,7 +71,7 @@ body {
     margin-bottom: 3px;
 }
 .internal-call-box-2 {
-    background-color: RGB(240, 132, 81);
+    background-color: #b651f0;
     color: aliceblue !important;
     height: 100%;
     padding: 1rem;
@@ -123,7 +123,7 @@ svg {
     font-family: mononoki;
     display: flex;
     flex-flow: column;
-    box-shadow: 0 -10px 9px -5px #1fa8ca;
+    box-shadow: 0 -10px 9px -5px #771fca;
 }
 
 .subbox {
@@ -132,7 +132,7 @@ svg {
 }
 
 .button-box {
-    background-color: rgb(81, 189, 240);
+    background-color: #6386FF;
     color: aliceblue !important;
     padding: 1rem;
     margin: 0;
@@ -150,15 +150,28 @@ svg {
     text-decoration: none;
 }
 
+.disclaimer{
+    font-size: .5em !important;
+}
   
 @keyframes bgscroll {
     0% {background-position: 3rem 7rem;}
     100% {background-position: 13rem 12.8rem;}
 }
 
+figcaption {
+    font-size: .8em;
+    color:#686b6b;
+}
+
+figure {
+    margin-left: 1em;
+    align-items: center;    
+}
+
 
 .bgbox {
-    background: rgb(81, 189, 240);
+    background: #b651f0;
     border-radius: .5rem;
     margin-top: 1rem;
     padding-right: 1rem;
@@ -168,7 +181,9 @@ svg {
     min-width: 45rem;
     max-width: 45rem;
     z-index: -1;
-    background-image: url('assets/grid.png');
+    background-image: url('../assets/grid.png');
+    filter: hue-rotate(180deg);
+    -webkit-filter: hue-rotate(30deg);
     background-size: 15rem;
     background-attachment: fixed;
     background-repeat: repeat;
@@ -183,7 +198,7 @@ svg {
 h1 {
     font-family: title;
     font-size: 3.5rem;
-    color:rgb(81, 189, 240);
+    color:#b651f0;
     margin: 0;
 }
 
@@ -191,8 +206,9 @@ h2 {
     font-family: mononoki;
     font-size: 1.5rem;
     font-style: oblique;
-    color:rgb(81, 189, 240);
+    color:#b651f0;
     margin: 0;
+    margin-top: .6em;
 }
 
 h3 {
@@ -205,28 +221,38 @@ h3 {
 
 h4 {
     font-family: title;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-family: mononoki;
     font-weight: normal;
-    margin: 0;
-    color:#2b2c2c;
+    margin: 1em;
+    margin-bottom: 1em;
+    color:#686b6b;
 }
 
 hr {
     width:45%;
     text-align:left;
     margin-left:0;
-    color: rgb(81, 189, 240);
+    color: #b651f0;
     border-width: 3px;
+}
+
+p {
+    margin: .5em;
 }
 
 
 @font-face {
     font-family: mononoki;
-    src: url(assets/mononoki-Regular.ttf);
+    src: url(../assets/mononoki-Regular.ttf);
 }
 
 @font-face {
     font-family:title;
-    src: url(assets/CoupeurCarve-Heavy.otf);
+    src: url(../assets/CoupeurCarve-Heavy.otf);
+}
+
+@font-face {
+    font-family:dot;
+    src: url(../assets/DotGothic16-Regular.ttf);
 }
