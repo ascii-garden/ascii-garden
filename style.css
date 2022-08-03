@@ -1,29 +1,116 @@
-.wrapper {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: stretch;
-	padding: 5px;
-	background-image: url("dot-grid.png");
-	background-repeat: repeat;
+body {
+    background: rgb(239, 241, 241);
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
 
-.wrapper > content {
-	margin: 10px;
+.flexbox-container{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}    
 
+.internal-box {
+    height: 100%;
+    padding: 1rem;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
 }
 
-.container {
-	max-width: 820px;
-
+.mainbox {
+    background: rgba(255, 255, 255);
+    border-radius: .5rem;
+    margin-top: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    min-width: 45rem;
+    max-width: 45rem;
+    font-family: mononoki;
+    display: flex;
+    flex-flow: row;
+    box-shadow: 0 -10px 9px -5px #1fa8ca;
+  }
+  
+@keyframes bgscroll {
+    0% {background-position: 3rem 7rem;}
+    100% {background-position: 13rem 12.8rem;}
 }
 
-pre {
 
-font-family: "Courier New", Courier, monospace;
-
+.bgbox {
+    background: rgb(81, 189, 240);
+    border-radius: .5rem;
+    margin-top: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    min-width: 45rem;
+    max-width: 45rem;
+    z-index: -1;
+    background-image: url('assets/grid.png');
+    background-size: 15rem;
+    background-attachment: fixed;
+    background-repeat: repeat;
+    background-position: 3rem 7rem;
+    animation: bgscroll 5s linear 0s infinite; 
+    
+    align-self: flex-end;
+    margin-bottom: -35px;
+     
 }
 
-a {
-	color: #c05858;
+h1 {
+    font-family: title;
+    font-size: 3.5rem;
+    color:rgb(81, 189, 240);
+    margin: 0;
+}
+
+h2 {
+    font-family: title;
+    font-size: 1.5rem;
+    color:rgb(101, 200, 247);
+    margin: 0;
+}
+
+h4 {
+    font-family: title;
+    font-size: 1.3rem;
+    font-family: mononoki;
+    font-weight: normal;
+    margin: 0;
+}
+
+
+@font-face {
+    font-family: mononoki;
+    src: url(assets/mononoki-Regular.ttf);
+}
+
+@font-face {
+    font-family:title;
+    src: url(assets/CoupeurCarve-Heavy.otf);
 }
