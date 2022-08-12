@@ -21,7 +21,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-flow: column;
-}    
+}   
 
 .intro-box {
     height: 100%;
@@ -43,6 +43,17 @@ body {
     height: 100%;
     padding: 1rem;
     margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
+}
+
+.nested-column {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -132,8 +143,7 @@ svg {
 }
 
 .button-box {
-    background-color: rgb(81, 189, 240);
-    color: aliceblue !important;
+    background-color: rgb(227, 231, 233);
     padding: 1rem;
     margin: 0;
     width: 100%;
@@ -143,7 +153,77 @@ svg {
     display: -ms-flexbox;
     display: -webkit-flex;
     border-radius: .5rem;
-    margin: 1em;
+    margin: .5em;
+    margin-right: .2em;
+    margin-bottom: 0;
+}
+
+.null-box {
+    background-color: white;
+    padding: 1rem;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    border-radius: .5rem;
+    margin: .5em;
+    margin-right: .2em;
+    margin-bottom: 0;
+}
+
+.label-box-blue {
+    background-color: rgb(81, 189, 240);    
+    padding: 1rem;
+    padding-right: 4rem;
+    width: 100%;
+    text-align: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    border-radius: .5rem;
+    margin: .5em;
+    margin-bottom: 0;
+}
+
+.label-box-orange {
+    background-color: RGB(240, 132, 81);  
+    padding: 1rem;
+    padding-right: 4rem;
+    width: 100%;
+    text-align: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    border-radius: .5rem;
+    margin: .5em;
+    margin-bottom: 0;
+}
+
+.label-box-purple {
+    background-color: #b651f0;    
+    padding: 1rem;
+    padding-right: 4rem;
+    width: 100%;
+    text-align: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    border-radius: .5rem;
+    margin: .5em;
+    margin-bottom: 0;
+}
+
+.label{
+    color: rgb(102, 104, 107);
+    font-weight: normal;
+    font-size: 1em;
+    padding-top: .2em;
 }
 
 .nicelink{
@@ -212,6 +292,14 @@ h4 {
     color:#2b2c2c;
 }
 
+h5 {
+    font-family: title;
+    font-size: 4rem;
+    font-weight: bold;
+    color: aliceblue;
+    margin-bottom: .2em;
+}
+
 hr {
     width:45%;
     text-align:left;
@@ -219,6 +307,39 @@ hr {
     color: rgb(81, 189, 240);
     border-width: 3px;
 }
+
+.title-svg {
+    height: 35%;
+    padding: 0;
+}
+
+.icon-title {
+    box-shadow: inset 0 0 0 0 rgb(84, 178, 221); 
+    padding-bottom: 0em;
+    font-size: 2rem;
+    color: white;
+    transition: color .2s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.icon-title-offset{
+    box-shadow: inset 0 0 0 0 rgb(84, 178, 221);    
+    padding-top: .4em;
+    color: rgb(84, 178, 221);
+    text-decoration: rgb(84, 178, 221) wavy underline;
+    transition: color .2s ease-in-out, text-decoration-color .2 ease-in-out, box-shadow .3s ease-in-out;
+    text-decoration-thickness: .1em;
+}
+
+.icon-title-offset:hover {
+    box-shadow: inset 10rem 10rem 0 0 rgb(84, 178, 221);
+    color: white;   
+    text-decoration-color: white; 
+}
+
+.icon-title-offset:hover + .icon-title {
+    box-shadow: inset 0 10rem 0 0 rgb(84, 178, 221);
+}
+
 
 
 @font-face {

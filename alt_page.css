@@ -1,0 +1,372 @@
+body {
+    background: rgb(239, 241, 241);
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flexbox-container{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}   
+
+.intro-box {
+    height: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
+}
+
+.internal-box {
+    height: 100%;
+    padding: 1rem;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
+}
+
+.nested-column {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
+}
+
+.internal-call-box {
+    background-color: rgb(81, 189, 240);
+    color: aliceblue !important;
+    height: 100%;
+    padding: 1rem;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    border-radius: .5rem;
+    align-items: center;
+    margin-left: 0em;
+    margin-right: .3em;
+    margin-top: .2em;
+    margin-bottom: 3px;
+    min-width: 30em;
+    max-width: 30em;
+}
+.internal-call-box-2 {
+    background-color: RGB(240, 132, 81);
+    color: aliceblue !important;
+    height: 100%;
+    padding: 1rem;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    border-radius: .5rem;
+    align-items: center;
+    margin-left: 0em;
+    margin-right: .3em;
+    margin-top: .2em;
+    margin-bottom: 3px;  
+    min-width: 30em;
+    max-width: 30em;
+}
+.internal-call-box-3 {
+    background-color: #b651f0;
+    color: aliceblue !important;
+    height: 100%;
+    padding: 1rem;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    border-radius: .5rem;
+    align-items: center;
+    margin-left: 0em;
+    margin-right: .3em;
+    margin-top: .2em;
+    margin-bottom: 3px;  
+    min-width: 30em;
+    max-width: 30em;
+}
+
+svg {
+    padding-right: 1rem;
+    width: 10%; height: auto;
+}
+
+.mainbox {
+    background: rgba(255, 255, 255);
+    border-radius: .5rem;
+    margin-top: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    min-width: 45rem;
+    max-width: 45rem;
+    font-family: mononoki;
+    display: flex;
+    flex-flow: column;
+    box-shadow: 0 -10px 9px -5px #1fa8ca;
+}
+
+.subbox {
+    display: flex;
+    flex-flow: row;
+}
+
+.button-box {
+    background-color: rgb(227, 231, 233);
+    padding: 1rem;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    border-radius: .5rem;
+    margin: .5em;
+    margin-right: .2em;
+    margin-bottom: 0;
+}
+
+.null-box {
+    background-color: white;
+    padding: 1rem;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    border-radius: .5rem;
+    margin: .5em;
+    margin-right: .2em;
+    margin-bottom: 0;
+}
+
+.label-box-blue {
+    background-color: rgb(81, 189, 240);    
+    padding: 1rem;
+    padding-right: 4rem;
+    width: 100%;
+    text-align: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    border-radius: .5rem;
+    margin: .5em;
+    margin-bottom: 0;
+}
+
+.label-box-orange {
+    background-color: RGB(240, 132, 81);  
+    padding: 1rem;
+    padding-right: 4rem;
+    width: 100%;
+    text-align: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    border-radius: .5rem;
+    margin: .5em;
+    margin-bottom: 0;
+}
+
+.label-box-purple {
+    background-color: #b651f0;    
+    padding: 1rem;
+    padding-right: 4rem;
+    width: 100%;
+    text-align: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    border-radius: .5rem;
+    margin: .5em;
+    margin-bottom: 0;
+}
+
+.label{
+    color: rgb(102, 104, 107);
+    font-weight: normal;
+    font-size: 1em;
+    padding-top: .2em;
+}
+
+.nicelink{
+    text-decoration: none;
+}
+
+  
+@keyframes bgscroll {
+    0% {background-position: 3rem 7rem;}
+    100% {background-position: 13rem 12.8rem;}
+}
+
+
+.bgbox {
+    background: rgb(81, 189, 240);
+    border-radius: .5rem;
+    margin-top: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    min-width: 45rem;
+    max-width: 45rem;
+    z-index: -1;
+    background-image: url('assets/grid.png');
+    background-size: 15rem;
+    background-attachment: fixed;
+    background-repeat: repeat;
+    background-position: 3rem 7rem;
+    animation: bgscroll 5s linear 0s infinite; 
+    
+    align-self: flex-end;
+    margin-bottom: -35px;
+     
+}
+
+h1 {
+    font-family: title;
+    font-size: 3.5rem;
+    color:rgb(81, 189, 240);
+    margin: 0;
+}
+
+h2 {
+    font-family: mononoki;
+    font-size: 1.5rem;
+    font-style: oblique;
+    color:rgb(81, 189, 240);
+    margin: 0;
+}
+
+h3 {
+    font-family: mononoki;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color:white;
+    margin: 0;
+}
+
+h4 {
+    font-family: title;
+    font-size: 1.3rem;
+    font-family: mononoki;
+    font-weight: normal;
+    margin: 0;
+    color:#2b2c2c;
+}
+
+h5 {
+    font-family: title;
+    font-size: 4rem;
+    font-weight:bold;
+    color: aliceblue;
+    margin-bottom: .2em;
+    margin-top: .4em;
+}
+
+h6 {
+    font-family: mononoki;
+    color: rgb(102, 104, 107);
+    font-style: italic;
+    font-weight: normal;
+    font-size: .8rem;
+    margin: 0;
+}
+
+hr {
+    width:45%;
+    text-align:left;
+    margin-left:0;
+    color: rgb(81, 189, 240);
+    border-width: 3px;
+}
+
+.title-svg {
+    height: 35%;
+    padding: 0;
+}
+
+.icon-title {
+    box-shadow: inset 0 0 0 0 rgb(84, 178, 221); 
+    padding-bottom: 0em;
+    font-size: 2rem;
+    color: white;
+    transition: color .2s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.icon-title-offset{
+    box-shadow: inset 0 0 0 0 rgb(84, 178, 221);    
+    padding-top: .4em;
+    color: rgb(84, 178, 221);
+    text-decoration: rgb(84, 178, 221) wavy underline;
+    transition: color .2s ease-in-out, text-decoration-color .2 ease-in-out, box-shadow .3s ease-in-out;
+    text-decoration-thickness: .1em;
+}
+
+.icon-title-offset:hover {
+    box-shadow: inset 10rem 10rem 0 0 rgb(84, 178, 221);
+    color: white;   
+    text-decoration-color: white; 
+}
+
+.icon-title-offset:hover + .icon-title {
+    box-shadow: inset 0 10rem 0 0 rgb(84, 178, 221);
+}
+
+
+
+@font-face {
+    font-family: mononoki;
+    src: url(assets/mononoki-Regular.ttf);
+}
+
+@font-face {
+    font-family:title;
+    src: url(assets/CoupeurCarve-Heavy.otf);
+}
+
+.margin-remover {
+    margin: 0;
+}
