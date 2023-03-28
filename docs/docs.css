@@ -1,4 +1,5 @@
 body {
+    font-family: 'mona';
     background: rgb(239, 241, 241);
     min-height: 100%;
     padding: 0;
@@ -54,7 +55,7 @@ body {
 }
 
 .internal-call-box {
-    background-color: #e94f8a;
+    background-color: hsl(219, 12%, 37%);
     color: aliceblue !important;
     height: 100%;
     padding: 1rem;
@@ -71,7 +72,7 @@ body {
     margin-bottom: 3px;
 }
 .internal-call-box-2 {
-    background-color: #e94f8a;
+    background-color: hsl(219, 12%, 37%);
     color: aliceblue !important;
     height: 100%;
     padding: 1rem;
@@ -123,7 +124,7 @@ svg {
     font-family: mononoki;
     display: flex;
     flex-flow: column;
-    box-shadow: 0 -10px 9px -5px #e94f8a;
+    box-shadow: 0 -10px 9px -5px hsl(194, 92%, 60%);
 }
 
 .subbox {
@@ -189,7 +190,7 @@ figure {
 
 
 .bgbox {
-    background: #e94fbb;
+    background: hsl(219, 12%, 37%);
     border-radius: .5rem;
     margin-top: 1rem;
     padding-right: 1rem;
@@ -199,7 +200,7 @@ figure {
     min-width: 45rem;
     max-width: 45rem;
     z-index: -1;
-    background-image: url('../assets/grid.png');
+    background-image: url('../assets/special_grid.png');
     filter: hue-rotate(180deg);
     -webkit-filter: hue-rotate(30deg);
     background-size: 15rem;
@@ -216,7 +217,7 @@ figure {
 h1 {
     font-family: title;
     font-size: 3.5rem;
-    color:#e94f8a;
+    color:hsl(219, 12%, 37%);
     padding-top: .3em;
     margin: 0;
 }
@@ -225,7 +226,7 @@ h2 {
     font-family: mononoki;
     font-size: 1.5rem;
     font-style: oblique;
-    color:#e94f8a;
+    color:hsl(219, 12%, 37%);
     margin: 0;
     margin-top: .6em;
     margin-bottom: .2em;
@@ -235,7 +236,7 @@ h3 {
     font-family: dot;
     font-size: 1.2rem;
     font-weight: bold;
-    color:#e94f8a;
+    color:hsl(219, 12%, 37%);
     margin: 0;
 }
     .breadcrumbs {
@@ -249,7 +250,7 @@ h3 {
 h4 {
     font-family: title;
     font-size: 1.1rem;
-    font-family: 'mona';
+    font-family: mononoki;
     font-weight: normal;
     margin: 1em;
     margin-bottom: .5em;
@@ -260,7 +261,7 @@ hr {
     width:45%;
     text-align:left;
     margin-left:0;
-    color: #e94f8a;
+    color: hsl(219, 12%, 37%);
     border-width: 3px;
     margin-left: .4em;
 }
@@ -286,7 +287,7 @@ p {
 }
 
 .mona {
-	font-family: mona;
+	font-family: dot;
 	
 }
 
@@ -303,10 +304,4 @@ p {
 @font-face {
     font-family:dot;
     src: url(../assets/DotGothic16-Regular.ttf);
-}
-
-@font-face {
-   font-family: 'mona';
-   src: url(../assets/mona.ttf);
-   unicode-range: u+0980-09FF;
 }
