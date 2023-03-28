@@ -4,68 +4,75 @@ body {
     min-height: 100%;
     padding: 0;
     margin: 0;
+    
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .flexbox-container{
-    height: 100%;
+    /* height: 100%; */
     padding: 0;
     margin: 0;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
+    /*display: -webkit-box;*/
+    /*display: -moz-box;*/
+    /*display: -ms-flexbox;*/
     display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /*display: flex;*/
+    /* align-items: center;
+    justify-content: center; */
     flex-flow: column;
 }    
 
 .intro-box {
-    height: 100%;
+    /* height: 100%; */
     padding-left: 0.2rem;
     padding-right: 1rem;
     padding-bottom: 0;
     margin: 0;
-    display: -webkit-box;
+    /*display: -webkit-box;
     display: -moz-box;
-    display: -ms-flexbox;
+    display: -ms-flexbox;*/
     display: -webkit-flex;
-    display: flex;
-    align-items: left;
-    justify-content: left;
+    /*display: flex;*/
+    /* align-items: left;
+    justify-content: left; */
     flex-direction: column;
 }
 
 .internal-box {
-    height: 100%;
+    /* height: 100%; */
     padding: 1rem;
     padding-top: 0em;
     margin: 0;
+    /*
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
+    */
     display: -webkit-flex;
+    /*
     display: flex;
-    align-items: left;
-    justify-content: left;
+    */
+    /* align-items: left;
+    justify-content: left; */
     flex-direction: column;
 }
 
 .internal-call-box {
     background-color: hsl(219, 12%, 37%);
     color: aliceblue !important;
-    height: 100%;
+    /* height: 100%; */
     padding: 1rem;
     margin: 0;
+    /*
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
+    */
     display: -webkit-flex;
     border-radius: .5rem;
-    align-items: center;
+    /* align-items: center; */
     margin-left: 1em;
     margin-right: 1em;
     margin-top: .2em;
@@ -77,12 +84,14 @@ body {
     height: 100%;
     padding: 1rem;
     margin: 0;
+    /*
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
+    */
     display: -webkit-flex;
     border-radius: .5rem;
-    align-items: center;
+    /* align-items: center; */
     margin-left: 1em;
     margin-right: 1em;
     margin-top: .2em;
@@ -94,12 +103,14 @@ body {
     height: 100%;
     padding: 1rem;
     margin: 0;
+    /*
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
+    */
     display: -webkit-flex;
     border-radius: .5rem;
-    align-items: center;
+    /* align-items: center; */
     margin-left: 1em;
     margin-right: 1em;
     margin-top: .2em;
@@ -139,9 +150,11 @@ svg {
     padding: .2rem;
     /* width: 100%; */
     text-align: left !important;
+    /*
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
+    */
     display: -webkit-flex;
     /* border-radius: .5rem; */
 	/*padding-top: 1em;*/
