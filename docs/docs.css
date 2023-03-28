@@ -291,6 +291,11 @@ p {
 	
 }
 
+.mita {
+	font-family: title;
+	font-weight: bold;
+}
+
 @font-face {
     font-family: mononoki;
     src: url(../assets/mononoki-Regular.ttf);
