@@ -301,7 +301,13 @@ p {
 
 .mona {
 	font-family: dot;
-	
+
+}
+
+.mona2 {
+	font-family: dot;
+    white-space: pre-line;
+
 }
 
 .mita {
