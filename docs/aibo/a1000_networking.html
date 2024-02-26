@@ -1,0 +1,659 @@
+
+<head>
+    <meta charset="UTF-8">
+    <title>the ascii.garden</title>
+    <link href="../docs.css" rel="stylesheet" type="text/css" media="all">
+
+</head>
+
+<body>
+        <div class = "flexbox-container">
+            <div class = "bgbox">
+                <br>
+            </div>
+            <div class = "mainbox">
+                <div class = "internal-box">  
+                    <div class = "subbox">
+                            <div class = "intro-box">
+                                <h1 class = "mita">ERS1000 Networking</h1>
+                            </div>                           
+                    </div>
+                    <hr> 
+                    <div class = "subbox">
+                        <div class="nav">
+                            <h3 class = "breadcrumbs"><a href = "../index.html" class="breadcrumb-link">Home</a> ＞ <a href = "docs.html">docs</a> ＞ a1000net</h3>
+                        </div>
+      
+            </div>           
+                   
+                <div class = "internal-box"> 
+                    <!--<img src="img/pink_banner.png">-->
+                        
+                        <center><h4>It's alive!</h4>
+                            <img src="a01_icon.png" width="200"></center>
+                        <p>Unlike previous models, the ERS-1000 is a cloud-connected device that continuously connects to the network (provided its network switch has set WiFi and/or LTE to enabled). While the dog is capable of functioning off-network, key features are locked behind its web API. In addition, an as-of-yet unexplained system lock occurs on some units that cannot connect to the internet or ping cellular. (Could it be that there are security protections against tampering?)</p> 
+                        <p>Therefore, it is pertinent to have some understanding of the ERS-1000 network structure and features prior to EOL. The following research includes <i>only public information the AIBO API serves</i> and includes <i>no</i> reverse-engineering or generally Terms of Service-breaking material. TL;DR this is out of love, don't sue me.</p>
+						<br><br>
+                    
+                    <h2>Networking nitty-gritties</h2> 
+                    <p>
+                    AIBO connects to a large quantity of servers.
+                    </p>
+                    <p>The myaibo application in particular is concerned with four servers primarily, outside of CDNs: 
+                    <ul>
+                        <li>"friend", which handles friended AIBOs and keeping track of interaction between those robots</li>
+                        <li>"feedish" (feed dish), which handles the online 'feeding AIBO' features</li>
+                        <li>"trinity" (matrix reference?), which handles "AIBO missions" sent from AIBO patrol</li>
+                        <li>"frontgate", which appears to handle most other aspects of AIBO's online features such as the dog's hopspitalization and update status, EULA, registered persons, etc</li>
+                        <li>"image" for storing and serving the images taken by AIBO</li>
+                    </ul>
+                    Beyond this, there are analytics servers, content delivery servers, Amazon IOT servers, compute clusters, Amazon cloudfront interfaces, and others, that handle live data from the robot and build out the user interfaces.</p>
+                    <p>The general cycle of behavior on the web is vaguely as follows:
+                        <ol>
+                            <li>
+                            myaibo authorizes with the server
+                            </li>
+                            <li>
+                            the latest version of the EULA is retrieved, and its acceptance status is checked
+                            </li>
+                            <li>the user's settings are retrieved</li>
+                            <li>the user's robots and their data are retrieved</li>
+                            <li>the user's cloud subscription status is recieved</li>
+                            <li>the robot's hospitalization status is recieved</li>
+                            <li>the server takes logs</li>
+                            <li>robot function servers are queried</li>
+                            <li>device state and functionality is checked</li>
+                            <li>system status and settings are checked</li>
+                            <li>app announcements are checked</li>
+                            <li>aibo's photos are checked and downloaded</li>
+                            <li>aibo's brain is served</li>
+                            <li>timezones are checked</li>
+                            <li>a list of error codes is recieved</li>
+                        </ol>
+                    </p>
+                    
+                    <h2>Information from AIBO (hontai)</h2> 
+                    <h3>AIBO's personality</h3>
+                    <p>
+                    AIBO reports both static values representing its set "personality" and dynamic "mood" values that inform AIBO's current state.
+                    </p>
+                    <p>
+                        The static personality values are:
+                        <ul>
+                            <li>extroversion</li>
+                            <li>conscientiousness</li>
+                            <li>openness</li>
+                            <li>neuroticism</li>
+                            <li>sportsMinded</li>
+                        </ul>
+                        Along with these static values, the server reports a "type" and a "level". The known "levels" are "little" and "normal", presumably connected to their age. The types correspond to the listed personality deliniations in the app as follows:
+                        <table>
+                            <thead>
+                              <tr>
+                                <th>Listed Name<br></th>
+                                <th>Internal Name</th>
+                                <th>extro- version<br></th>
+                                <th>conscientious- ness</th>
+                                <th>openness</th>
+                                <th>neuroticism</th>
+                                <th>sportsMinded</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>shy</td>
+                                <td>shy</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0.2</td>
+                                <td>0</td>
+                              </tr>
+                              <tr>
+                                <td>curious</td>
+                                <td>cute</td>
+                                <td>0.6</td>
+                                <td>0.5</td>
+                                <td>0.6</td>
+                                <td>1</td>
+                                <td>0</td>
+                              </tr>
+                              <tr>
+                                <td>clingy</td>
+                                <td>easygoing</td>
+                                <td>1</td>
+                                <td>0.5</td>
+                                <td>0<br></td>
+                                <td>0</td>
+                                <td>0.3</td>
+                              </tr>
+                            </tbody>
+                            </table>
+                        </p>
+                            <p>Note that this is an incomplete list. The "curious" values listed are for an aibo in their "little" stage rather than adult stage. It is possible there is more variation. If you'd like to contibute to this research and have a cloud-connected ERS-1000, let me know.
+                    </p>
+                    <p>The dynamic values are:
+                        <ul>
+                            <li>
+                                anticipation_surprise
+                            </li>
+                            <li>
+                                fear_anger
+                            </li>
+                            <li>
+                                joy_sadness
+                            </li>
+                            <li>
+                                trust_disgust
+                            </li>
+                        </ul>
+                    These values scale and are relatively high-precision decimals. 
+                    </p>
+                    <p>
+                        There may be more internal personality values we don't get to see. At a fan meeting, developers shared an image comparing the natures of 3 different employee-posessed AIBOs and highlighted their differences. It's not known what these values actually were. Something shown here? Something not? Who can say.
+                    </p>
+
+                    <h2>Error codes</h2>
+                    <p>Refers to all "popup" style notifications that can appear in the app. They also include feature notifications.</p>
+                    <p>Most are copies of themselves, but they have distinct serials. The existing prefixes are DEV, NET, MEC, SYS, APP, FUP, SEC, FOTA, LEARNING, TRAINING, TIPS</p>
+                    <p>
+                        <ul>
+                            <li>DEV: General internal errors
+                            </li>
+                            <li>NET: Network errors</li>
+                            <li>MEC: Mechanical errors</li>
+                            <li>SYS: 'System' error. Standard "restart your aibo" error</li>
+                            <li>APP: App errors? Standard "restart your aibo" error</li>
+                            <li>FUP: Failed update errors.</li>
+                            <li>SEC: Also a failed update error. Wild guess that SEC stands for a "special" or "system" "error code"?</li>
+                            <li>FOTA: Firmware Over the Air. Prompts you to update AIBO.</li>
+                            <li>TRAINING: Notifies that the "be quiet" behaviors have changed or improved.</li>
+                            <li>TIPS: Notifies that your AIBO can get off of the station by itself after having charged.</li>
+                        </ul>
+                    </p>
+
+                    <h2>Model numbers</h2>
+                    <p>
+                        For an unknown reason, a full list of used and unused model numbers is reported.
+                    </p>
+                    <p> These values can be summarized as ERS-1000 serials with "editions" /A through /Z, identical serials with "ERS" replaced for "SR1", and five special serials with especially unknown purposes.</p>
+                    <p>
+                        <table>
+                        <thead><tr><th title="Field #1">MODEL #</th>
+                            <th title="Field #2">REGION</th>
+                            </tr></thead>
+                            <tbody><tr>
+                            <td>ERS-1000/N2 J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-XXXX/Y J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-XXXX/Z J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-XXXX/Y U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-XXXX/A J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/A J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/B J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/C J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/D J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/E J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/F J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/G J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/H J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/I J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/J J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/K J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/L J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/M J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/N J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/O J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/P J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/Q J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/R J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/S J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/T J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/U J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/V J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/W J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/X J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/Y J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/Z J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/A U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/B U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/C U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/D U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/E U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/F U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/G U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/H U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/I U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/J U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/K U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/L U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/M U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/N U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/O U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/P U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/Q U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/R U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/S U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/T U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/U U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/V U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/W U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/X U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/Y U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>SR1-1000/Z U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/A J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/B J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/C J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/D J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/E J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/F J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/G J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/H J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/I J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/J J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/K J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/L J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/M J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/N J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/O J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/P J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/Q J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/R J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/S J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/T J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/U J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/V J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/W J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/X J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/Y J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/Z J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/BI2J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/WI2J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/W3 J1</td>
+                            <td>&quot;JP&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/A U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/B U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/C U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/D U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/E U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/F U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/G U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/H U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/I U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/J U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/K U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/L U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/M U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/N U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/O U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/P U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/Q U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/R U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/S U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/T U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/U U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/V U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/W U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/X U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/Y U8</td>
+                            <td>&quot;US&quot;</td>
+                            </tr>
+                            <tr>
+                            <td>ERS-1000/Z</td>
+                            <td> </td>
+                            </tr>
+                            </tbody></table>
+                    </p>
+                    <p>
+                        Not likely intended behavior-- but isn't this fascinating?
+                    </p>
+                    <h2>Fun facts</h2>
+                    <p>
+                        Bizarre discoveries and funny comeuppances
+                        <ul>
+                            <li>AIBO's virtual food items have a "weight", implying AIBO can gain weight. Realistically, this is probably how the server keeps track of when AIBO is 'full'.
+                            </li>
+                            <li>
+                            Early in the ERS-1000's lifespan, it was announced that Chinese and American releases would be targeted. While the American release materialized, the Chinese release did not. Remnants indicate that the myaibo applications <i>were</i> being developed for Mandarin prior to that aspect of the project's cancellation.
+                            </li>
+                            <li>
+                            AIBO appears to leverage GNNs (distributed graph learning) in some form as part of its neural network featureset. GNNs are resource-intensive, so the workload might be distributed across everyone's devices.
+                            </li>
+                            <li>AIBO uses the linux networkmanager connmann, which you can install and try on your own system.</li>
+                        </ul>
+                    </p>
+                    <p class = "disclaimer">the song recommendation is: sm43429658</p> 
+                </div>
+                                                              
+                </div>                                                                    
+            </div>
+        </div>
+</body>
