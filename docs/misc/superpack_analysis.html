@@ -1,0 +1,84 @@
+
+<head>
+    <meta charset="UTF-8">
+    <title>the ascii.garden</title>
+    <link href="../docs.css" rel="stylesheet" type="text/css" media="all">
+
+</head>
+
+<body>
+        <div class = "flexbox-container">
+            <div class = "bgbox">
+                <br>
+            </div>
+            <div class = "mainbox">
+                <div class = "internal-box">  
+                    <div class = "subbox">
+                            <div class = "intro-box">
+                                <h1 class = "mita">LUKA SP VS MIKU SP</h1>
+                            </div>                           
+                    </div>
+                    <hr> 
+                    <div class = "subbox">
+                        <div class="nav">
+                            <h3 class = "breadcrumbs"><a href = "../index.html" class="breadcrumb-link">Home</a> ＞ <a href = "../docs.html">docs</a> ＞ spinner</h3>
+                        </div>
+      
+            </div>           
+                   
+                <div class = "internal-box"> 
+                    <p>2024/08/30</p>
+                    <h2>Assertion</h2> 
+                    <p>Newly released products HATSUNE MIKU SP and MEGURINE LUKA SP use the same recorded source data at their highest recorded pitches.</p>
+                    <h2>Data Description</h2> 
+                    <p>Fourier analysis and pitch detection algorithm SRH is used to estimate the fundamental frequency of both singing voices.</p>
+                    <table><thead>
+                        <tr>
+                          <th colspan="2"><h3>tS a_4</h3></th>
+                        </tr></thead>
+                      <tbody>
+                        <tr>
+                        <td><center><img src="suprpack/miku_1.png" width="300"></center><br>
+                            <center><img src="suprpack/miku_2.png" width="300"></center></td>
+                        <td><center><img src="suprpack/luka_1.png" width="300"></center><br>
+                            <center><img src="suprpack/luka_2.png" width="300"></center></td>
+                        </tr>
+                        <tr>
+                          <td><center>MIKU SP</center></td>
+                          <td><center>LUKA SP</center></td>
+                        </tr>
+                      </tbody>
+                      </table>
+                      <table><thead>
+                        <tr>
+                          <th colspan="2"><h3>M’ M_4</h3></th>
+                        </tr></thead>
+                      <tbody>
+                        <tr>
+                        <td><center><img src="suprpack/miku_3.png" width="300"></center><br>
+                            <center><img src="suprpack/miku_4.png" width="300"></center></td>
+                        <td><center><img src="suprpack/luka_3.png" width="300"></center><br>
+                            <center><img src="suprpack/luka_4.png" width="300"></center></td>
+                        </tr>
+                        <tr>
+                          <td><center>MIKU SP</center></td>
+                          <td><center>LUKA SP</center></td>
+                        </tr>
+                      </tbody>
+                      </table>
+                    
+                    <h2>Analysis</h2>
+                    <p>They are not the same.</p>
+                    <p>Samples do not occur within the same pitch ranges and have visibly different amplitudes.</p>
+                    <p>If LUKA SP were a pitched-down version of MIKU SP, we would see the same characterization of the pitch at the fundamental frequency over time, albeit in a different range. This means that if this were the case, the y-axis would be different, but the shape of the curve would be the same or similar. Because this is not the case, we can determine the samples to be separate recordings.</p>
+
+                    <h2>Source Code (MATLAB)</h2>
+                    <p><a href="https://gist.github.com/aptitudex/a19a984965185409b090a02d2be0dd04">GitHub Gist</a> (This is just a MATLAB example, but mirrored here nonetheless.)</p>
+
+
+                </div>
+                <p class = "disclaimer">the song recommendation is: sm43708803</p>                                              
+                </div>                                                                    
+            </div>
+        </div>
+</body>
