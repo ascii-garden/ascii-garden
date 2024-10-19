@@ -1,3 +1,5 @@
+/// REV 2024/10/19
+
 {
     "displayName": "ウマ娘 | Uma Musume",
     "blocks": [
