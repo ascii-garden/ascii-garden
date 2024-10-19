@@ -1,0 +1,50 @@
+{
+    "displayName": "ウマ娘 | Uma Musume",
+    "blocks": [
+        {
+            "type": "input",
+            "inputType": "firehose",
+            "id": "aaakaxj3lgp4u",
+            "firehoseSeconds": 43200
+        },
+        {
+            "id": "aaakavs4n7pms",
+            "type": "remove",
+            "subject": "item",
+            "value": "reply"
+        },
+        {
+            "type": "remove",
+            "subject": "labels",
+            "value": null,
+            "id": "aaakbtfz7mxf4",
+            "labels": [
+                "did:plc:ar7c4by46qjdydhdevvrndac/porn",
+                "did:plc:ar7c4by46qjdydhdevvrndac/sexual",
+                "did:plc:ar7c4by46qjdydhdevvrndac/nudity",
+                "did:plc:ar7c4by46qjdydhdevvrndac/nsfw"
+            ]
+        },
+        {
+            "type": "remove",
+            "subject": "list",
+            "value": null,
+            "id": "aaaka3dkkr35k",
+            "listUri": "at://did:plc:rhoiy7okevh4juzaymjhcgvg/app.bsky.graph.list/3l6selazcrp2b"
+        },
+        {
+            "type": "regex",
+            "value": "(AIart)|(AIイラスト)|(AI art)|(エロ)|(hentai)",
+            "caseSensitive": false,
+            "id": "aaaka37kntdi2",
+            "invert": true
+        },
+        {
+            "id": "aaakavs4n5dpm",
+            "type": "regex",
+            "value": "(ウマ娘)|\\b(uma musume)\\b|\\b(umamusu)\\b|\\b(umamusume)\\b|\\b(Admire Vega)\\b|(アドマイヤベガ)|\\b(Agnes Digital)\\b|(アグネスデジタル)|\\b(Agnes Tachyon)\\b|(アグネスタキオン)|\\b(Air Groove)\\b|(エアグルーヴ)|\\b(Air Messiah)\\b|(エアメサイア)|\\b(Air Shakur)\\b|(エアシャカール)|\\b(Aoi Kiryuin)\\b|(桐生院葵)|\\b(Aston Machan)\\b|(アストンマーチャン)|\\b(Bamboo Memory)\\b|(バンブーメモリー)|(ビリーヴ)|\\b(Biko Pegasus)\\b|(ビコーペガサス)|\\b(Bitter Glasse)\\b|(ビターグラッセ)|\\b(Biwa Hayahide)\\b|(ビワハヤヒデ)|\\b(Bubble Gum Fellow)\\b|(バブルガムフェロー)|\\b(Buena Vista)\\b|(ブエナビスタ)|\\b(Byerley Turk)\\b|(バイアリーターク)|\\b(Calstone Light O)\\b|(カルストンライトオ)|(シーザリオ)|\\b(Cheval Grand)\\b|(シュヴァルグラン)|\\b(Copano Rickey)\\b|(コパノリッキー)|\\b(Curren Chan)\\b|(カレンチャン)|\\b(Daiichi Ruby)\\b|(ダイイチルビー)|\\b(Daitaku Helios)\\b|(ダイタクヘリオス)|\\b(Daiwa Scarlet)\\b|(ダイワスカーレット)|\\b(Dantsu Flame)\\b|(ダンツフレーム)|\\b(Daring Heart)\\b|(デアリングハート)|\\b(Daring Tact)\\b|(デアリングタクト)|\\b(Darley Arabian)\\b|(ダーレーアラビアン)|\\b(Dream Journey)\\b|(ドリームジャーニー)|\\b(Duramente)\\b|(ドゥラメンテ)|(デュランダル)|\\b(Eishin Flash)\\b|(エイシンフラッシュ)|\\b(El Condor Pasa)\\b|(エルコンドルパサー)|\\b(Espoir City)\\b|(エスポワールシチー)|\\b(Etsuko Otonashi)\\b|(乙名史悦子)|\\b(Fine Motion)\\b|(ファインモーション)|\\b(Fuji Kiseki)\\b|(フジキセキ)|(フリオーソ)|\\b(Fusaichi Pandora)\\b|(フサイチパンドラ)|\\b(Gentildonna)\\b|(ジェンティルドンナ)|\\b(Godolphin Barb)\\b|(ゴドルフィンバルブ)|\\b(Gold City)\\b|(ゴールドシチー)|\\b(Gold Ship)\\b|(ゴールドシップ)|\\b(Grass Wonder)\\b|(グラスワンダー)|\\b(Happy Meek)\\b|(ハッピーミーク)|\\b(Haru Urara)\\b|(ハルウララ)|\\b(Hishi Akebono)\\b|(ヒシアケボノ)|\\b(Hishi Amazon)\\b|(ヒシアマゾン)|\\b(Hishi Miracle)\\b|(ヒシミラクル)|\\b(Hokko Tarumae)\\b|(ホッコータルマエ)|\\b(Ikuno Dictus)\\b|(イクノディクタス)|\\b(Inari One)\\b|(イナリワン)|\\b(Ines Fujin)\\b|(アイネスフウジン)|\\b(Jungle Pocket)\\b|(ジャングルポケット)|\\b(Junko Hosoe)\\b|(細江純子)|\\b(K.S.Miracle)\\b|(ケイエスミラクル)|\\b(Katsuragi Ace)\\b|(カツラギエース)|\\b(Kawakami Princess)\\b|(カワカミプリンセス)|\\b(King Halo)\\b|(キングヘイロー)|\\b(Kitasan Black)\\b|(キタサンブラック)|\\b(Light Hello)\\b|(ライトハロー)|\\b(Little Cocon)\\b|(リトルココン)|\\b(Manhattan Cafe)\\b|(マンハッタンカフェ)|\\b(Maruzensky)\\b|(マルゼンスキー)|\\b(Marvelous Sunday)\\b|(マーベラスサンデー)|\\b(Matikanefukukitaru)\\b|(マチカネフクキタル)|\\b(Matikanetannhauser)\\b|(マチカネタンホイザ)|\\b(Mayano Top Gun)\\b|(マヤノトップガン)|\\b(Mei Satake)\\b|(佐岳メイ)|\\b(Meisho Doto)\\b|(メイショウドトウ)|\\b(Mejiro Ardan)\\b|(メジロアルダン)|\\b(Mejiro Bright)\\b|(メジロブライト)|\\b(Mejiro Dober)\\b|(メジロドーベル)|\\b(Mejiro McQueen)\\b|(メジロマックイーン)|\\b(Mejiro Palmer)\\b|(メジロパーマー)|\\b(Mejiro Ramonu)\\b|(メジロラモーヌ)|\\b(Mejiro Ryan)\\b|(メジロライアン)|\\b(Mihono Bourbon)\\b|(ミホノブルボン)|\\b(Misato Akasaka)\\b|(赤坂美聡)|\\b(Mr. C.B.)\\b|(ミスターシービー)|\\b(Nakayama Festa)\\b|(ナカヤマフェスタ)|\\b(Narita Brian)\\b|(ナリタブライアン)|\\b(Narita Taishin)\\b|(ナリタタイシン)|\\b(Narita Top Road)\\b|(ナリタトップロード)|\\b(Neo Universe)\\b|(ネオユニヴァース)|\\b(Nice Nature)\\b|(ナイスネイチャ)|\\b(Nishino Flower)\\b|(ニシノフラワー)|(ノーリーズン)|\\b(North Flight)\\b|(ノースフライト)|\\b(Oguri Cap)\\b|(オグリキャップ)|\\b(Orfevre)\\b|(オルフェーヴル)|\\b(Rhein Kraft)\\b|(ラインクラフト)|\\b(Rice Shower)\\b|(ライスシャワー)|\\b(Rigantona)\\b|(リガントーナ)|\\b(Riko Kashimoto)\\b|(樫本理子)|\\b(Royce and Royce)\\b|(ロイスアンドロイス)|\\b(Ryoka Tsurugi)\\b|(都留岐涼花)|\\b(Sakura Bakushin O)\\b|(サクラバクシンオー)|\\b(Sakura Chiyono O)\\b|(サクラチヨノオー)|\\b(Sakura Laurel)\\b|(サクラローレル)|\\b(Samson Big)\\b|(サムソンビッグ)|\\b(Sasami Anshinzawa)\\b|(安心沢刺々美)|\\b(Satono Crown)\\b|(サトノクラウン)|\\b(Satono Diamond)\\b|(サトノダイヤモンド)|\\b(Seeking the Pearl)\\b|(シーキングザパール)|\\b(Seiun Sky)\\b|(セイウンスカイ)|\\b(Shinko Windy)\\b|(シンコウウインディ)|\\b(Silence Suzuka)\\b|(サイレンススズカ)|\\b(Sirius Symboli)\\b|(シリウスシンボリ)|\\b(Smart Falcon)\\b|(スマートファルコン)|\\b(Sonon Elfie)\\b|(ソノンエルフィー)|\\b(Sounds of Earth)\\b|(サウンズオブアース)|\\b(Special Week)\\b|(スペシャルウィーク)|(スティルインラブ)|\\b(Super Creek)\\b|(スーパークリーク)|\\b(Sweep Tosho)\\b|(スイープトウショウ)|\\b(Symboli Kris S)\\b|(シンボリクリスエス)|\\b(Symboli Rudolf)\\b|(シンボリルドルフ)|\\b(T.M. Opera O)\\b|(テイエムオペラオー)|\\b(Taiki Shuttle)\\b|(タイキシャトル)|\\b(Tamamo Cross)\\b|(タマモクロス)|\\b(Tanino Gimlet)\\b|(タニノギムレット)|\\b(Tap Dance City)\\b|(タップダンスシチー)|\\b(Tazuna Hayakawa)\\b|(駿川たづな)|\\b(Tokai Teio)\\b|(トウカイテイオー)|\\b(Tosen Jordan)\\b|(トーセンジョーダン)|(トランセンド)|\\b(Tsurumaru Tsuyoshi)\\b|(ツルマルツヨシ)|\\b(Twin Turbo)\\b|(ツインターボ)|\\b(Venus Paques)\\b|(ヴェニュスパーク)|\\b(Verxina)\\b|(ヴィルシーナ)|\\b(Vivlos)\\b|(ヴィブロス)|(ウオッカ)|\\b(Win Variation)\\b|(ウインバリアシオン)|\\b(Winning Ticket)\\b|(ウイニングチケット)|\\b(Wonder Acute)\\b|(ワンダーアキュート)|\\b(Yaeno Muteki)\\b|(ヤエノムテキ)|\\b(Yamanin Zephyr)\\b|(ヤマニンゼファー)|\\b(Yayoi Akikawa)\\b|(秋川やよい)|\\b(Yukino Bijin)\\b|(ユキノビジン)|\\b(Zenno Rob Roy)\\b|(ゼンノロブロイ)",
+            "caseSensitive": false
+        }
+    ],
+    "license": "EUPL-1.2"
+}
