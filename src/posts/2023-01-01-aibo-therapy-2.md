@@ -14,6 +14,8 @@ In 1st grade, I became completely obsessed with something called "AIBO". Later, 
 
 'AIBO THERAPY' can be used to manually exercise the joints on most of the old-school AIBO models. This is important because the robots accumulate dust inside their potentiometers. This prevents normal function and sometimes causes complete shutdown if the robot is thoroughly convinced that something is stuck in its leg.
 
+Please note that I wrote this software when I was around 13 years old, hence it is not a masterpiece nor am I supporting it anymore. I am listing it here for your convenience as a legacy tool.
+
 ## Downloads
 
 AIBO THERAPY 2.0 is 'PMS' software. The memory stick used must contain the 'PMS' magic file for this software to work.
