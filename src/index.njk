@@ -1,0 +1,61 @@
+---
+layout: layouts/base.njk
+title: Home
+---
+
+<div class="home-header">
+  <pre class="ansi-logo">                                                 █▄            
+                   ▀▀ ▀▀        ▄▄       ▄       ██       ▄    
+ ▄▀▀█▄ ▄██▀█ ▄███▀ ██ ██     ▄████ ▄▀▀█▄ ████▄▄████ ▄█▀█▄ ████▄
+ ▄█▀██ ▀███▄ ██    ██ ██     ██ ██ ▄█▀██ ██   ██ ██ ██▄█▀ ██ ██
+▄▀█▄███▄▄██▀▄▀███▄▄██▄██ ██ ▄▀████▄▀█▄██▄█▀  ▄█▀███▄▀█▄▄▄▄██ ▀█
+                                ██                             
+                              ▀▀▀                                </pre>
+  <p style="margin:.3em 0 1em; font-size:1.05em;"><a class="about-link" href="/about/">about</a> | <a class="about-link" href="/feed.xml">rss</a></p>
+</div>
+
+{% set thoughts = collections.allPosts | filterByTag('thoughts') | sortByDateDesc | slice(0, 5) %}
+{% set projects = collections.allPosts | filterByTag('projects') | sortByDateDesc | slice(0, 5) %}
+{% set arts     = collections.allPosts | filterByTag('art')     | sortByDateDesc | slice(0, 5) %}
+
+<div class="home-columns">
+  <div class="home-col thoughts">
+    <h3>thoughts</h3>
+    <ul>
+      {% for post in thoughts %}
+        <li><a href="{{ post.url }}">{{ post.data.title }}</a><time>{{ post.date | readableDate }}</time></li>
+      {% else %}
+        <li style="color:#888;font-size:.85em;">(no posts yet)</li>
+      {% endfor %}
+    </ul>
+    <a class="view-all-btn" href="/tags/thoughts/">see more thoughts -></a>
+  </div>
+
+  <div class="home-col projects">
+    <h3>projects</h3>
+    <ul>
+      {% for post in projects %}
+        <li><a href="{{ post.url }}">{{ post.data.title }}</a><time>{{ post.date | readableDate }}</time></li>
+      {% else %}
+        <li style="color:#888;font-size:.85em;">(no posts yet)</li>
+      {% endfor %}
+    </ul>
+    <a class="view-all-btn" href="/tags/projects/">see more projects -></a>
+  </div>
+
+  <div class="home-col art">
+    <h3>art</h3>
+    <ul>
+      {% for post in arts %}
+        <li><a href="{{ post.url }}">{{ post.data.title }}</a><time>{{ post.date | readableDate }}</time></li>
+      {% else %}
+        <li style="color:#888;font-size:.85em;">(no posts yet)</li>
+      {% endfor %}
+    </ul>
+    <a class="view-all-btn" href="/tags/art/">see more art -></a>
+  </div>
+</div>
+
+<p style="text-align:center; ">
+  <a class="view-all-btn" href="/tags/">see all posts -></a>
+</p>

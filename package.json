@@ -1,0 +1,20 @@
+{
+  "name": "ascii-garden",
+  "version": "1.0.0",
+  "description": "mine website",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "debug": "DEBUG=Eleventy* eleventy",
+    "build-ghpages": "npm run build"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  },
+  "dependencies": {
+    "@11ty/eleventy-img": "^6.0.4",
+    "@11ty/eleventy-plugin-rss": "^3.0.0"
+  }
+}

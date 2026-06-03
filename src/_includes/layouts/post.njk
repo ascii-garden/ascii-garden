@@ -1,0 +1,40 @@
+---
+layout: layouts/base.njk
+---
+<div class="subbox">
+  <div class="nav" style="width:100%;">
+    <h3 class="breadcrumbs">
+      <a href="/" class="breadcrumb-link">Home</a> ＞ 
+      <a href="/tags/" class="breadcrumb-link">posts</a> ＞ 
+      {{ title | default('post') }}
+    </h3>
+  </div>
+</div>
+
+
+{% if title %}<h1 class="mita" style="font-size:2.1rem; margin-bottom:.2em;">{{ title }}</h1>{% endif %}
+
+{% set postDate = page.date %}
+{% set displayTags = (page.data.tags or tags or []) | default([]) | reject('equalto', 'allPosts') %}
+
+<div class="post-meta" style="margin: 0.25rem 0 0.9rem; font-size: 0.82em; color: #888; line-height: 1.4;">
+  {% if postDate %}
+    <time>{{ postDate | readableDate }}</time>
+  {% endif %}
+
+  {% if displayTags.length > 0 %}
+    {% if postDate %} &nbsp;|&nbsp; {% endif %}
+    Tags:
+    {% for tag in displayTags %}
+      <a href="/tags/{{ tag }}/" style="color: #888; text-decoration: underline;">#{{ tag }}</a>{% if not loop.last %}, {% endif %}
+    {% endfor %}
+  {% endif %}
+</div>
+
+<div class="internal-box" style="padding-top:0.4rem;">
+  {{ content | safe }}
+
+  {% if songRec %}
+  <p class="disclaimer">the song recommendation is: {{ songRec }}</p>
+  {% endif %}
+</div>

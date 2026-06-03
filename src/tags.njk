@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+title: "tag: {{ tag }}"
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter: ['all', 'posts', 'tagList']
+permalink: "/tags/{{ tag }}/"
+---
+
+<h1 class="mita">tag: {{ tag }}</h1>
+<hr>
+<p><a href="/tags/"><- all posts</a> | <a href="/">home</a></p>
+
+{% set posts = collections[tag] | sortByDateDesc %}
+
+<ul style="list-style:none; padding:0;">
+{% for post in posts %}
+  <li style="margin: .6rem 0;">
+    <a href="{{ post.url }}">{{ post.data.title }}</a>
+    <time style="color:#888; font-size:.85em; margin-left:.5em;">{{ post.date | readableDate }}</time>
+  </li>
+{% else %}
+  <li>no posts here yet.</li>
+{% endfor %}
+</ul>

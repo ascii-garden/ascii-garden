@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} — {% endif %}the ascii.garden</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <style>
+    .site-wrapper { padding: 1rem 0 3rem; }
+  </style>
+</head>
+<body>
+  <div class="flexbox-container">
+    <div class="mainbox">
+      <div class="internal-box">
+        {{ content | safe }}
+      </div>
+    </div>
+  </div>
+</body>
+</html>
