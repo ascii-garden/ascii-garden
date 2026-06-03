@@ -11,7 +11,7 @@ layout: layouts/post.njk
 <br><h4>sm40772073</h4>
 </center>
 
-Do you know who Shigetaka Kurita is? Well, I didn't either before I become more active on niconico douga. The dutiful COO of niconico, he tweets constantly about the goings-on of the community and regularly appears in livestreams. In other words, he's a meme of his own caliber.
+Do you know who Shigetaka Kurita is? Well, I didn't either before I became more active on niconico douga. The dutiful COO of niconico, he tweets constantly about the goings-on of the community and regularly appears in livestreams. In other words, he's a meme of his own caliber.
 
 I tried to translate this song, which was released last July to instant fanfare by [Fujiwara Hagane.](https://twitter.com/fujitetsu8) You might think that a typical 'respect' urban horror story is about to unfold, but prepare for a surprise.
 
@@ -32,7 +32,7 @@ hidari no poketto ni girishime<br>
 Grasping it tightly in my left pocket,</p>
 
 <p class="mona">家に急いで帰りました<br>
-ie ni isoide kaerimashita<br>
+uchi ni isoide kaerimashita<br>
 I hurried back home.</p>
 
 <p class="mona">蛍光灯の明かりの下<br>
