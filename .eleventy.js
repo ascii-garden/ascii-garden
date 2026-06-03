@@ -71,7 +71,7 @@ module.exports = async function (eleventyConfig) {
 
   eleventyConfig.addPlugin(eleventyImageTransformPlugin , {
     extensions: "html",
-    formats: ["avif", "webp", "auto"],
+    formats: ["avif", "auto"],
     defaultAttributes: {
       loading: "lazy",
       decoding: "async",
