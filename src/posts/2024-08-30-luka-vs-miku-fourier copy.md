@@ -58,9 +58,6 @@ layout: layouts/post.njk
 <h2>Analysis</h2>
 <p>They are not the same.</p>
 <p>Samples do not occur within the same pitch ranges and have visibly different amplitudes.</p>
-<p>If LUKA SP were a pitched-down version of MIKU SP, we would see the same characterization of the pitch at the fundamental frequency over time, albeit in a different range. This means that if this were the case, the y-axis would be different, but the shape of the curve would be the same or similar. Because this is not the case, we can determine the samples to be separate recordings.</p>
-
-<h2>Source Code (MATLAB)</h2>
-<p><a href="https://gist.github.com/aptitudex/a19a984965185409b090a02d2be0dd04">GitHub Gist</a> (This is just a MATLAB example, but mirrored here nonetheless.)</p>
+<p>If LUKA SP were a pitched-down version of MIKU SP, we would see the same characterization of the pitch at the fundamental frequency over time, albeit in a different range. This means that if this were the case, the y-axis would be different, but the shape of the curve would be the same or similar. Because this is not the case, we can reasonably determine the samples to be separate recordings.</p>
 
 <p class="disclaimer">the song recommendation is: sm43708803. written on 2024/08/30</p>
