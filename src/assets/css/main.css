@@ -140,7 +140,7 @@ p {
   pointer-events: none;
 
   filter: saturate(2.5) brightness(0.95) contrast(1.2);
-  background: rgba(212, 150, 115, 0.24); 
+  background: rgba(212, 150, 115, 0.14); 
   mix-blend-mode: color; 
 }
 
