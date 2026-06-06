@@ -74,7 +74,7 @@ module.exports = async function (eleventyConfig) {
     widths: [200, 400],
     formats: ["gif"],
     transform: (sharp) => {
-      sharp.gif({ colours: 8, dither: 0, effort: 1 });
+      sharp.gif({ colours: 12, dither: 0, effort: 1 });
     },
     defaultAttributes: {
       sizes: '100vw',
