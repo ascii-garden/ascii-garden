@@ -139,8 +139,8 @@ p {
   inset: 0;
   pointer-events: none;
 
-  filter: saturate(2.5) brightness(0.85) contrast(1.2);
-  background: rgba(226, 149, 104, 0.15); 
+  filter: saturate(2.5) brightness(0.95) contrast(1.2);
+  background: rgba(212, 150, 115, 0.24); 
   mix-blend-mode: color; 
 }
 
@@ -150,7 +150,7 @@ p {
   inset: 0;
   pointer-events: none;
   background-image:
-    radial-gradient(circle, rgba(255,255,255,0.72) .4px, transparent 1.1px),
+    radial-gradient(circle, rgba(255,255,255,0.52) .4px, transparent 1.1px),
     radial-gradient(circle, rgba(255,255,255,0.38) .4px, transparent 1.1px);
   background-size: 4px 4px, 8px 8px;
   background-position: 0 0, 2px 2px;
