@@ -71,8 +71,13 @@ module.exports = async function (eleventyConfig) {
 
   eleventyConfig.addPlugin(eleventyImageTransformPlugin , {
     extensions: "html",
-    formats: ["avif", "auto"],
+    widths: [200, 400],
+    formats: ["gif"],
+    transform: (sharp) => {
+      sharp.gif({ colours: 8, dither: 0, effort: 1 });
+    },
     defaultAttributes: {
+      sizes: '100vw',
       loading: "lazy",
       decoding: "async",
     }

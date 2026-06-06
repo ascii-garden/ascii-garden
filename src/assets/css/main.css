@@ -112,7 +112,7 @@ h4 {
 
 p {
   font-family: var(--mono);
-  font-size: 1em;
+  font-size: .9em;
   margin: 0.5em 0.2em 0.2em;
 }
 
@@ -124,6 +124,37 @@ p {
 .mita {
   font-weight: bold;
   line-height: 1;
+}
+
+.dither-img {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.dither-img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  filter: saturate(2.5) brightness(0.85) contrast(1.2);
+  background: rgba(226, 149, 104, 0.15); 
+  mix-blend-mode: color; 
+}
+
+.dither-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.72) .4px, transparent 1.1px),
+    radial-gradient(circle, rgba(255,255,255,0.38) .4px, transparent 1.1px);
+  background-size: 4px 4px, 8px 8px;
+  background-position: 0 0, 2px 2px;
+  mix-blend-mode: screen;
 }
 
 .mona2 { white-space: pre-line; }
@@ -239,4 +270,8 @@ figure { margin-left: 1em; }
   margin: 0.4rem auto 0.6rem;
   letter-spacing: 0;
   color: var(--make-cyan)
+}
+
+li {
+  font-size: .9em;
 }
