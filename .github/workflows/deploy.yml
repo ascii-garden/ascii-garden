@@ -18,10 +18,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout
 
       - name: Setup Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node
         with:
           node-version: '24'
           cache: 'npm'
@@ -30,7 +30,7 @@ jobs:
         run: npm config set registry https://registry.npmjs.org
 
       - name: Cache Eleventy .cache
-        uses: actions/cache@v6
+        uses: actions/cache
         with:
           path: ./.cache
           key: ${{ runner.os }}-eleventy-fetch-cache
@@ -42,7 +42,7 @@ jobs:
         run: npm run build-ghpages
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact
         with:
           path: _site/
 
@@ -53,4 +53,4 @@ jobs:
       name: github-pages
     steps:
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v6
+        uses: actions/deploy-pages
