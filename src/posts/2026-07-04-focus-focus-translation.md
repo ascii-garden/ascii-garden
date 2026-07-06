@@ -80,7 +80,7 @@ infinite light 　 cut the era
 
 <p class="mona">広角　広角　視界を広げて<br>
 koukaku koukaku shikai o hirogete<br>
-wide angle 　 wide angle 　 expand the field of view
+wide angle 　 wide angle 　 expand the view
 </p>
 
 <p class="mona">パースのマジック　世界を曲げる<br>
