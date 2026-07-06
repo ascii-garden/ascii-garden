@@ -6,6 +6,6 @@ layout: layouts/post.njk
 ---
 
 <center>
-<img src="/assets/misc/miku_soldering.png" style="width:100%" eleventy:ignore>
+<img src="/assets/misc/miku_soldering_min.png" style="width:100%" eleventy:ignore>
 <p>in my heart of hearts, I believe that Hatsune Miku embraces antenna theory</p>
 </center>
