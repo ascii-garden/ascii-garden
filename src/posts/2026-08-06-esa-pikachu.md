@@ -1,6 +1,6 @@
 ---
 title: "roman AND pikachu earing their wings in 2026?"
-date: 2026-07-12
+date: 2026-08-06
 tags: ["art"]
 layout: layouts/post.njk
 ---
