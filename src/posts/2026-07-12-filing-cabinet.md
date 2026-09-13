@@ -6,6 +6,6 @@ layout: layouts/post.njk
 ---
 
 <center>
-<img src="/assets/art/filing_cabinet.jpg" style="width:100%" eleventy:ignore>
+<img src="/assets/art/filing_cabinet.jpg" style="width:50%" eleventy:ignore>
 <p>following acquisition of a house plant</p>
 </center>
